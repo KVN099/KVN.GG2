@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You</title>
+    <link rel="stylesheet" href="./css/thank-you.css">
+</head>
+<body>
+    <div class="thank-you-container">
+        <h1>Thank You for Your Order!</h1>
+        <p>Your order has been successfully placed. You will receive a confirmation email shortly.</p>
+        <p><a href="consoles.html">Return to Shop</a></p>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const deliveryDate = localStorage.getItem("deliveryDate");
+
+            if (deliveryDate) {
+                const deliveryMessage = document.createElement("p");
+                deliveryMessage.innerHTML = `<strong>Expected Delivery Date:</strong> ${deliveryDate}`;
+                document.querySelector(".thank-you-container").appendChild(deliveryMessage);
+
+                localStorage.removeItem("deliveryDate");
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Checkout Container */
+.checkout-container {
+    width: 90%;
+    max-width: 600px;
+    background: rgba(165, 146, 146, 0.205);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    margin: 30px auto;
+    transition: transform 0.3s ease;
+}
+
+/* Headings */
+h1 {
+    text-align: center;
+    font-size: 50px;
+    margin-bottom: 5px;
+    color: #f3ecec;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #2be6ec;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+label {
+    font-weight: bold;
+    font-size: 14px;
+    color: #f8f9fa;
+    margin-bottom: 5px;
+}
+
+input, textarea {
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    outline: none;
+    font-size: 14px;
+    transition: all 0.3s ease-in-out;
+}
+
+input:focus, textarea:focus {
+    background: rgba(255, 255, 255, 0.3);
+    border-left: 3px solid #2be6ec;
+}
+
+/* Table Styling */
+table#order-summary {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+#order-summary th, #order-summary td {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    text-align: center;
+    color: #fff;
+}
+
+#order-summary th {
+    background-color: #06266baf;
+    text-transform: uppercase;
+}
+
+#order-summary tfoot td {
+    font-weight: bold;
+    background-color:#06266baf;
+}
+
+/* Button Styling */
+button {
+    padding: 12px;
+    background: #2be6ec;
+    color: #1a1a2e;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+    background: #08f7ff;
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .checkout-container {
+        width: 95%;
+    }
+
+    h1, h2 {
+        font-size: 20px;
+    }
+}

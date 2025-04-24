@@ -1,0 +1,442 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+    background-color: #121212;
+    color: #E0E0E0;
+}
+.title-bar {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    margin-left: 250px; 
+    width: calc(100% - 250px); 
+    background-color: #1c1c1c;
+    color: #E0E0E0;
+    padding: 10px 20px; 
+    font-size: 28px;
+    font-weight: bold;
+    animation: slideInFromTop 0.5s ease-out, fadeIn 1s ease-out; 
+    position: relative; 
+}
+
+/* Title Text */
+.title-text {
+    margin: 0; 
+    font-size: 50px; 
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    flex: 1; 
+    text-align: center; 
+    opacity: 0; 
+    animation: fadeInText 1s ease-out 0.2s forwards; 
+}
+
+/* Auth Buttons Container */
+.auth-buttons {
+    position: absolute; 
+    right: 20px; 
+    display: flex; 
+    gap: 10px; 
+    opacity: 0; 
+    animation: fadeInButtons 1s ease-out 0.5s forwards; 
+}
+
+/* Button Styles */
+.auth-buttons button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Sign In Button */
+.auth-buttons .sign-in {
+    background-color: #E0E0E0;
+    color: #1c1c1c;
+}
+
+.auth-buttons .sign-in:hover {
+    background-color: #d4d4d4;
+    color: #121212;
+}
+
+/* Sign Up Button */
+.auth-buttons .sign-up {
+    background-color: #1da1f2; /*  Blue */
+    color: #ffffff;
+}
+
+.auth-buttons .sign-up:hover {
+    background-color: #4ca0f7;
+}
+
+/* Animations */
+@keyframes slideInFromTop {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInButtons {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+/* Sidebar Styles */
+.nav-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px;
+    background: linear-gradient(180deg, #1c1c1c, #121212);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.7);
+    z-index: 2;
+    padding-top: 20px;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.menu-toggle {
+    display: none;
+}
+
+.logo {
+    width: 150px;
+    height: auto;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+/* Navigation List */
+nav {
+    width: 100%;
+}
+
+.nav-list {
+    list-style-type: none;
+    text-align: center;
+    padding-top: 20px;
+    margin-bottom: 20px;
+}
+
+.nav-list li {
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: #E0E0E0;
+    font-size: 18px;
+    padding: 10px 15px;
+    display: block;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.nav-list a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateX(5px);
+}
+
+/* Dropdown Menu */
+.dropdown {
+    margin-top: 10px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    opacity: 0;
+}
+
+.dropdown li {
+    margin-bottom: 10px;
+}
+
+.dropdown a {
+    font-size: 16px;
+    padding: 8px 15px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+}
+
+.nav-list li:hover .dropdown {
+    max-height: 500px;
+    opacity: 1;
+}
+
+/* Title Bar Animation */
+@keyframes slideInFromTop {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Main Content */
+.main-content {
+    margin-left: 250px; 
+    margin-top: 0px; 
+    padding: 20px;
+    overflow-y: auto; 
+}
+.intro-section {
+    font-size: 21px;
+    margin-bottom: 10px;
+    text-align: center;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.05); 
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+    line-height: 1.6; /* to readability */
+}
+
+/* Form Section Styling */
+.form-section {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 100px; 
+}
+
+.form-section h2 {
+    font-size: 24px;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.form-section label {
+    font-size: 16px;
+    color: #e0e0e0;
+}
+
+.form-section input,
+.form-section textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    border: 1px solid #555555;
+    border-radius: 4px;
+    background-color: #1c1c1c;
+    color: #ffffff;
+}
+
+.form-section button {
+    background-color: #1da1f2;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 20px; 
+}
+
+.form-section button:hover {
+    background-color: #4ca0f7;
+}
+
+/* Footer */
+.footer {
+    background-color: rgb(9, 7, 27);
+    color: #ffffff;
+    text-align: center;
+    padding: 15px 0;
+    width: calc(100% - 250px); 
+    position: fixed; 
+    bottom: 0; 
+    left: 250px; 
+    z-index: 1; 
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+
+/* Footer Content Styles */
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%; 
+    padding-left: 0; 
+}
+
+/* Footer Image - Positioned to the left corner */
+.footer-image {
+    position: absolute;
+    margin-bottom: 7px;
+    margin-left: 20px;
+    left: 10px;  
+    bottom: 10px; 
+    width: 75px; 
+    height: 75px; 
+    object-fit: contain; 
+}
+
+.footer p {
+    margin-bottom: 10px;
+    text-align: center; /* Ensure text is centered */
+}
+
+.footer-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Social icon styles */
+.social-icon {
+    color: #E0E0E0; 
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.social-icon:hover {
+    color: #1da1f2; /*  Blue */
+}
+
+.social-icon.instagram:hover {
+    color: #c32aa3; /*  Purple */
+}
+
+.social-icon.email:hover {
+    color: #d44638; /*  Red */
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    .nav-container {
+        width: 100%;
+        height: auto;
+        position: static;
+        padding-top: 10px;
+    }
+
+    .nav-list {
+        display: block;
+        padding: 0;
+        margin: 0;
+    }
+
+    .nav-list li {
+        margin-bottom: 15px;
+        text-align: center;
+    }
+
+    .nav-list a {
+        display: block;
+        width: 100%;
+        padding: 10px 0;
+        font-size: 18px;
+    }
+
+    .title-bar {
+        margin-left: 0;
+        width: 100%;
+        padding: 10px;
+        font-size: 20px;
+    }
+
+    .title-text {
+        font-size: 20px;
+    }
+
+    .auth-buttons {
+        position: static;
+        margin-top: 10px;
+        justify-content: center;
+    }
+
+    .main-content {
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 100px;
+    }
+
+    .intro-section,
+    .form-section {
+        margin: 0;
+        padding: 10px;
+    }
+
+    .footer {
+        width: 100%;
+        left: 0;
+        padding: 10px;
+    }
+
+    .footer-image {
+        width: 65px;
+        height: 65px;
+    }
+
+    .footer p {
+        font-size: 14px;
+    }
+
+    .footer-icons {
+        gap: 10px;
+    }
+}
